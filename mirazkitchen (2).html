@@ -1,0 +1,2264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Mirazkitchen offers delicious Nigerian meals, food delivery, catering, and local dishes in Onitsha."
+    />
+
+    <meta
+      name="keywords"
+      content="food in Onitsha, restaurant in Onitsha, Nigerian food, catering, food delivery"
+    />
+
+    <meta name="author" content="Mirazkitchen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miraz Kitchen — Awada, Onitsha</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="MirazK.png" />
+    <style>
+      :root {
+        --terra: #c0502a;
+        --terra-dark: #8b3518;
+        --cream: #faf5ed;
+        --cream-dark: #f0e8d8;
+        --gold: #c9943a;
+        --gold-light: #e8c96a;
+        --ink: #1a0f08;
+        --ink-soft: #3d2b1f;
+        --white: #fffdf8;
+        --wa: #25d366;
+        --radius: 16px;
+        --shadow: 0 8px 40px rgba(26, 15, 8, 0.15);
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(250, 245, 237, 0.95);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(201, 148, 58, 0.2);
+        padding: 12px 16px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .nav-logo img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+      }
+      .nav-logo-text {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 900;
+        color: var(--terra);
+        letter-spacing: -0.5px;
+        line-height: 1;
+      }
+      .nav-logo-text span {
+        color: var(--gold);
+        font-style: italic;
+      }
+      .nav-links {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-links a {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--ink-soft);
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 30px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+        white-space: nowrap;
+      }
+      .nav-links a:hover {
+        background: var(--terra);
+        color: var(--white);
+      }
+      .nav-order-btn {
+        background: var(--terra);
+        color: var(--white) !important;
+        font-weight: 500 !important;
+      }
+      .nav-order-btn:hover {
+        background: var(--terra-dark) !important;
+        color: var(--white) !important;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 20px 60px;
+        background:
+          linear-gradient(160deg, rgba(192, 80, 42, 0.06) 0%, transparent 60%),
+          var(--cream);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .hero-bg-text {
+        position: absolute;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(100px, 30vw, 280px);
+        font-weight: 900;
+        color: rgba(192, 80, 42, 0.1);
+        white-space: nowrap;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: -10px;
+      }
+      .hero-inner {
+        width: 100%;
+        max-width: 480px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--gold-light);
+        color: var(--terra-dark);
+        font-size: 12px;
+        font-weight: 500;
+        padding: 5px 14px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .hero-tag::before {
+        content: "★";
+        font-size: 10px;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(42px, 12vw, 72px);
+        font-weight: 900;
+        line-height: 1.02;
+        color: var(--ink);
+        letter-spacing: -1.5px;
+        margin-bottom: 10px;
+      }
+      h1 em {
+        font-style: italic;
+        color: var(--terra);
+        display: block;
+      }
+      .hero-sub {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 18px;
+        color: var(--ink-soft);
+        margin-bottom: 32px;
+        line-height: 1.5;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background: var(--terra);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 14px 28px;
+        border-radius: 50px;
+        transition:
+          transform 0.2s,
+          background 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 20px rgba(192, 80, 42, 0.3);
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-primary:hover {
+        background: var(--terra-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(192, 80, 42, 0.4);
+      }
+      .btn-wa {
+        background: var(--wa);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 14px 24px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          filter 0.2s;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      }
+      .btn-wa:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--terra);
+        border: 2px solid var(--terra);
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-block;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .btn-outline:hover {
+        background: var(--terra);
+        color: var(--white);
+      }
+
+      /* hero food cards */
+      .hero-food-strip {
+        display: flex;
+        gap: 14px;
+        overflow-x: auto;
+        padding: 32px 0 8px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .hero-food-strip::-webkit-scrollbar {
+        display: none;
+      }
+      .food-chip {
+        flex: 0 0 auto;
+        background: var(--white);
+        border-radius: var(--radius);
+        overflow: hidden;
+        width: 130px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s;
+      }
+      .food-chip:hover {
+        transform: translateY(-6px) rotate(-1deg);
+      }
+      .food-chip img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        display: block;
+      }
+      .food-chip-label {
+        padding: 8px 10px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--ink-soft);
+        background: var(--white);
+      }
+
+      /* ── SECTION SHARED ── */
+      section {
+        padding: 72px 20px;
+      }
+      .section-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(30px, 8vw, 48px);
+        font-weight: 900;
+        line-height: 1.08;
+        letter-spacing: -1px;
+        color: var(--ink);
+        margin-bottom: 16px;
+      }
+      h2 em {
+        font-style: italic;
+        color: var(--terra);
+      }
+      .section-desc {
+        font-size: 15px;
+        color: var(--ink-soft);
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 32px;
+      }
+
+      /* ── STATS BAND ── */
+      .stats-band {
+        background: var(--terra);
+        color: var(--white);
+        padding: 32px 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      .stat-item {
+        text-align: center;
+        padding: 20px 12px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .stat-item:nth-child(2n) {
+        border-right: none;
+      }
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4) {
+        border-bottom: none;
+      }
+      .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 38px;
+        font-weight: 900;
+        color: var(--gold-light);
+        display: block;
+      }
+      .stat-label {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 4px;
+      }
+
+      /* ── MENU ── */
+      #menu {
+        background: var(--cream-dark);
+      }
+      .menu-tabs {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+        margin-bottom: 28px;
+      }
+      .menu-tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tab-btn {
+        flex: 0 0 auto;
+        background: var(--white);
+        border: 2px solid transparent;
+        color: var(--ink-soft);
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+      .tab-btn.active {
+        background: var(--terra);
+        color: var(--white);
+        border-color: var(--terra);
+      }
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+      }
+      .menu-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 2px 16px rgba(26, 15, 8, 0.08);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        cursor: pointer;
+      }
+      .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+      }
+      .menu-card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        display: block;
+      }
+      .menu-card-body {
+        padding: 12px 14px 14px;
+      }
+      .menu-card-name {
+        font-family: "Playfair Display", serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 4px;
+        line-height: 1.2;
+      }
+      .menu-card-desc {
+        font-size: 12px;
+        color: var(--ink-soft);
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+      .menu-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .menu-price {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--terra);
+      }
+      .add-btn {
+        background: var(--terra);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        font-size: 18px;
+        line-height: 1;
+        display: grid;
+        place-items: center;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .add-btn:hover {
+        background: var(--terra-dark);
+        transform: scale(1.15);
+      }
+
+      /* ── ORDER PANEL ── */
+      .order-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        background: var(--ink);
+        color: var(--white);
+        padding: 12px 16px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transform: translateY(100%);
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -8px 40px rgba(26, 15, 8, 0.3);
+        box-sizing: border-box;
+        width: 100%;
+        /* cursor: pointer; */
+      }
+      .order-panel.visible {
+        transform: translateY(0);
+      }
+      .order-panel-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .order-info .order-count {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .order-info .order-total {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--gold-light);
+      }
+      .panel-right {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+      }
+      .view-cart-btn {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 11px 10px;
+        border-radius: 30px;
+        transition: background 0.2s;
+        white-space: nowrap;
+        text-align: center;
+      }
+      .view-cart-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .checkout-btn {
+        flex: 1;
+        background: var(--terra);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 11px 10px;
+        border-radius: 30px;
+        transition: background 0.2s;
+        white-space: nowrap;
+        text-align: center;
+      }
+      .checkout-btn:hover {
+        background: var(--terra-dark);
+      }
+
+      /* ── CART DRAWER ── */
+      .cart-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 600;
+        background: rgba(26, 15, 8, 0.55);
+        backdrop-filter: blur(4px);
+        align-items: flex-end;
+        justify-content: center;
+      }
+      .cart-overlay.open {
+        display: flex;
+      }
+      .cart-drawer {
+        background: var(--white);
+        border-radius: 24px 24px 0 0;
+        width: 100%;
+        max-width: 480px;
+        max-height: 88svh;
+        display: flex;
+        flex-direction: column;
+        animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .cart-header {
+        padding: 18px 20px 14px;
+        border-bottom: 1px solid var(--cream-dark);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-shrink: 0;
+      }
+      .cart-header h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .cart-handle {
+        width: 36px;
+        height: 4px;
+        background: var(--cream-dark);
+        border-radius: 2px;
+        margin: 0 auto 4px;
+      }
+      .cart-close {
+        background: var(--cream-dark);
+        border: none;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-size: 15px;
+        display: grid;
+        place-items: center;
+        color: var(--ink-soft);
+        flex-shrink: 0;
+      }
+      .cart-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .cart-empty {
+        text-align: center;
+        padding: 40px 0;
+        color: var(--ink-soft);
+        font-size: 15px;
+      }
+      .cart-empty .empty-icon {
+        font-size: 48px;
+        display: block;
+        margin-bottom: 12px;
+      }
+      .cart-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--cream);
+        border-radius: 14px;
+        padding: 12px 14px;
+      }
+      .cart-row-img {
+        width: 54px;
+        height: 54px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .cart-row-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .cart-row-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 3px;
+      }
+      .cart-row-price {
+        font-size: 13px;
+        color: var(--terra);
+        font-weight: 500;
+      }
+      .cart-row-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .cqty-btn {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1.5px solid var(--cream-dark);
+        background: var(--white);
+        cursor: pointer;
+        font-size: 16px;
+        display: grid;
+        place-items: center;
+        color: var(--terra);
+        transition: all 0.2s;
+        line-height: 1;
+      }
+      .cqty-btn:hover {
+        background: var(--terra);
+        color: var(--white);
+        border-color: var(--terra);
+      }
+      .cqty-btn.remove {
+        border-color: #e53935;
+        color: #e53935;
+      }
+      .cqty-btn.remove:hover {
+        background: #e53935;
+        color: #fff;
+        border-color: #e53935;
+      }
+      .cqty-num {
+        font-size: 15px;
+        font-weight: 600;
+        min-width: 20px;
+        text-align: center;
+        color: var(--ink);
+      }
+      .cart-footer {
+        border-top: 1px solid var(--cream-dark);
+        padding: 16px 20px 24px;
+        flex-shrink: 0;
+      }
+      .cart-total-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .cart-total-label {
+        font-size: 15px;
+        color: var(--ink-soft);
+      }
+      .cart-total-amount {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--terra);
+      }
+      .cart-footer-btns {
+        display: flex;
+        gap: 10px;
+      }
+      .clear-btn {
+        background: var(--cream-dark);
+        color: var(--ink-soft);
+        border: none;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 13px 18px;
+        border-radius: 30px;
+        transition: background 0.2s;
+      }
+      .clear-btn:hover {
+        background: #e8d5c0;
+      }
+
+      /* ── GALLERY ── */
+      #gallery {
+        background: var(--ink);
+        color: var(--white);
+      }
+      #gallery h2 {
+        color: var(--white);
+      }
+      #gallery h2 em {
+        color: var(--gold-light);
+      }
+      #gallery .section-desc {
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .gallery-mosaic {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+      }
+      .gallery-mosaic .g-item {
+        overflow: hidden;
+        border-radius: 12px;
+        aspect-ratio: 1;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .gallery-mosaic .g-item:hover {
+        transform: scale(1.03);
+      }
+      .gallery-mosaic .g-item.wide {
+        grid-column: span 2;
+        aspect-ratio: 2/1;
+      }
+      .gallery-mosaic .g-item.tall {
+        grid-row: span 2;
+        aspect-ratio: 1/2;
+      }
+      .gallery-mosaic .g-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ── DELIVERY ── */
+      #delivery {
+        background: var(--cream);
+      }
+      .delivery-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 28px 24px;
+        box-shadow: var(--shadow);
+        margin-bottom: 16px;
+      }
+      .delivery-icon {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+      .delivery-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+      .delivery-card p {
+        font-size: 14px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+      .delivery-zones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .zone-tag {
+        background: var(--cream-dark);
+        color: var(--terra-dark);
+        font-size: 12px;
+        font-weight: 500;
+        padding: 5px 12px;
+        border-radius: 30px;
+      }
+      .hours-grid {
+        display: grid;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+      }
+      .hours-row .day {
+        color: var(--ink-soft);
+      }
+      .hours-row .time {
+        font-weight: 500;
+        color: var(--terra);
+      }
+
+      /* ── CATERING ── */
+      #catering {
+        background: var(--terra);
+        color: var(--white);
+        overflow: hidden;
+      }
+      #catering h2 {
+        color: var(--white);
+      }
+      #catering h2 em {
+        color: var(--gold-light);
+      }
+      #catering .section-desc {
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .catering-form {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 28px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .form-group label {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: var(--white);
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        outline: none;
+        transition: border-color 0.2s;
+        width: 100%;
+        box-sizing: border-box;
+        min-width: 0;
+      }
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: var(--gold-light);
+      }
+      .form-group select option {
+        background: var(--terra-dark);
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .btn-gold {
+        background: var(--gold);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 14px 28px;
+        border-radius: 50px;
+        width: 100%;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+        margin-top: 4px;
+      }
+      .btn-gold:hover {
+        background: #a87820;
+        transform: translateY(-2px);
+      }
+
+      /* ── ABOUT ── */
+      #about {
+        background: var(--cream-dark);
+      }
+      .about-card {
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .about-img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+      }
+      .about-body {
+        padding: 28px 24px;
+      }
+      .about-body p {
+        font-size: 15px;
+        color: var(--ink-soft);
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .badge {
+        background: var(--cream);
+        color: var(--terra-dark);
+        border: 1px solid var(--cream-dark);
+        font-size: 13px;
+        font-weight: 500;
+        padding: 7px 16px;
+        border-radius: 30px;
+      }
+
+      /* ── REVIEWS ── */
+      #reviews {
+        background: var(--cream);
+      }
+      .reviews-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .review-card {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 20px 20px;
+        box-shadow: 0 2px 12px rgba(26, 15, 8, 0.07);
+        position: relative;
+      }
+      .review-card::before {
+        content: '"';
+        font-family: "Playfair Display", serif;
+        font-size: 80px;
+        color: var(--cream-dark);
+        position: absolute;
+        top: -10px;
+        left: 16px;
+        line-height: 1;
+      }
+      .review-stars {
+        color: var(--gold);
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      .review-text {
+        font-size: 14px;
+        color: var(--ink-soft);
+        line-height: 1.7;
+        font-style: italic;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 1;
+      }
+      .review-author {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--terra);
+      }
+
+      /* ── CONTACT / MAP ── */
+      #contact {
+        background: var(--ink);
+        color: var(--white);
+      }
+      #contact h2 {
+        color: var(--white);
+      }
+      #contact h2 em {
+        color: var(--gold-light);
+      }
+      .contact-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        padding: 18px 18px;
+      }
+      .contact-icon {
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+      .contact-label {
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 4px;
+      }
+      .contact-value {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--white);
+        line-height: 1.5;
+      }
+      .contact-value a {
+        color: var(--gold-light);
+        text-decoration: none;
+      }
+      .map-embed {
+        margin-top: 24px;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .map-embed iframe {
+        display: block;
+        width: 100%;
+        height: 220px;
+        border: none;
+      }
+
+      /* ── WA FLOAT ── */
+      .wa-float {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 150;
+        background: var(--wa);
+        color: #fff;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+        text-decoration: none;
+        font-size: 26px;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        animation: pulse-wa 2.5s infinite;
+      }
+      .wa-float:hover {
+        transform: scale(1.1);
+      }
+      @keyframes pulse-wa {
+        0%,
+        100% {
+          box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+        50% {
+          box-shadow: 0 4px 36px rgba(37, 211, 102, 0.7);
+        }
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--ink);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 28px 20px 40px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 13px;
+      }
+      footer .footer-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 900;
+        color: var(--cream);
+        margin-bottom: 8px;
+      }
+      footer .footer-logo span {
+        color: var(--gold);
+        font-style: italic;
+      }
+
+      /* ── MODAL ── */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 500;
+        background: rgba(26, 15, 8, 0.6);
+        backdrop-filter: blur(6px);
+        align-items: flex-end;
+        justify-content: center;
+      }
+      .modal-overlay.open {
+        display: flex;
+      }
+      .modal {
+        background: var(--white);
+        border-radius: 24px 24px 0 0;
+        width: 100%;
+        max-width: 480px;
+        max-height: 88svh;
+        overflow-y: auto;
+        padding: 28px 24px 40px;
+        animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      .modal-handle {
+        width: 40px;
+        height: 4px;
+        background: var(--cream-dark);
+        border-radius: 2px;
+        margin: 0 auto 20px;
+      }
+      .modal h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .modal-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 14px;
+        margin: 16px 0;
+      }
+      .modal-price {
+        font-size: 22px;
+        color: var(--terra);
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+      .modal-desc {
+        font-size: 14px;
+        color: var(--ink-soft);
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+      .qty-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .qty-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 2px solid var(--cream-dark);
+        background: var(--white);
+        cursor: pointer;
+        font-size: 20px;
+        display: grid;
+        place-items: center;
+        color: var(--terra);
+        transition: all 0.2s;
+      }
+      .qty-btn:hover {
+        background: var(--terra);
+        color: var(--white);
+        border-color: var(--terra);
+      }
+      .qty-num {
+        font-size: 20px;
+        font-weight: 500;
+        min-width: 24px;
+        text-align: center;
+      }
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        background: var(--cream-dark);
+        border: none;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-size: 16px;
+        display: grid;
+        place-items: center;
+        color: var(--ink-soft);
+      }
+
+      /* ── TOAST ── */
+      .toast {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-20px);
+        background: var(--ink);
+        color: var(--white);
+        padding: 10px 22px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        z-index: 999;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* ── ANIMATIONS ── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fade-up.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (min-width: 640px) {
+        .menu-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">
+        <img src="MirazK.png" alt="Miraz Kitchen Logo" />
+        <div class="nav-logo-text">Miraz<span>Kitchen</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#catering">Catering</a>
+        <a href="#contact">Find Us</a>
+        <a href="#menu" class="nav-order-btn">Order</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-bg-text">MIRAZ</div>
+      <div class="hero-inner">
+        <img
+          src="MirazK.png"
+          alt="Miraz Kitchen"
+          style="
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+            padding: 8px;
+            box-shadow: 0 4px 24px rgba(192, 80, 42, 0.18);
+            margin-bottom: 18px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <div class="hero-tag">Awada Layout · Onitsha · ⭐ 4.5</div>
+        <h1><em>Only the best is served.</em></h1>
+        <p class="hero-sub">
+          Delicious homestyle meals, fast delivery, and unforgettable catering
+          right in the heart of Onitsha.
+        </p>
+        <div class="hero-ctas">
+          <button
+            class="btn-primary"
+            onclick="
+              document
+                .getElementById('menu')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Order Now
+          </button>
+          <a
+            href="https://wa.me/2349035955007?text=Hi%20Miraz%20Kitchen!%20I%27d%20like%20to%20place%20an%20order"
+            target="_blank"
+            class="btn-wa"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            WhatsApp Order
+          </a>
+        </div>
+        <div class="hero-food-strip">
+          <div class="food-chip">
+            <img
+              src="./pictures/jollofrice.jpg"
+              alt="Jollof Rice"
+            />
+            <div class="food-chip-label">Jollof Rice</div>
+          </div>
+          <div class="food-chip">
+            <img
+              src="./pictures/friedchicken.jpg"
+              alt="Fried Chicken"
+            />
+            <div class="food-chip-label">Fried Chicken</div>
+          </div>
+          <div class="food-chip">
+            <img
+              src="./pictures/egusisoup.jpg"
+              alt="Egusi Soup"
+            />
+            <div class="food-chip-label">Egusi Soup</div>
+          </div>
+          <div class="food-chip">
+            <img
+              src="./pictures/peppersoup.jpg"
+              alt="Pepper Soup"
+            />
+            <div class="food-chip-label">Pepper Soup</div>
+          </div>
+          <div class="food-chip">
+            <img
+              src="./pictures/grilledfish.jpg"
+              alt="Grilled Fish"
+            />
+            <div class="food-chip-label">Grilled Fish</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-band">
+      <div class="stat-item">
+        <span class="stat-num">4.5★</span>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">6yrs</span>
+        <div class="stat-label">Serving Onitsha</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">30min</span>
+        <div class="stat-label">Avg Delivery</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">50+</span>
+        <div class="stat-label">Menu Items</div>
+      </div>
+    </div>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="section-label">What We Cook</div>
+      <h2>Today's <em>Menu</em></h2>
+      <p class="section-desc">
+        Fresh, homestyle Nigerian cooking made daily with local ingredients and
+        plenty of love.
+      </p>
+
+      <div class="menu-tabs">
+        <button class="tab-btn active" onclick="filterMenu('all', this)">
+          All
+        </button>
+        <button class="tab-btn" onclick="filterMenu('rice', this)">
+          Rice Dishes
+        </button>
+        <button class="tab-btn" onclick="filterMenu('soup', this)">
+          Soups & Swallow
+        </button>
+        <button class="tab-btn" onclick="filterMenu('protein', this)">
+          Proteins
+        </button>
+        <button class="tab-btn" onclick="filterMenu('snack', this)">
+          Snacks & Sides
+        </button>
+        <button class="tab-btn" onclick="filterMenu('drink', this)">
+          Drinks
+        </button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <!-- ORDER PANEL -->
+    <div class="order-panel" id="orderPanel">
+      <div class="order-info">
+        <div class="order-count" id="orderCount">0 items</div>
+        <div class="order-total" id="orderTotal">₦0</div>
+      </div>
+      <div class="panel-right">
+        <button class="view-cart-btn" onclick="openCart()">🛒 View Cart</button>
+        <button class="checkout-btn" onclick="sendWhatsAppOrder()">
+          Order via WhatsApp →
+        </button>
+      </div>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div
+      class="cart-overlay"
+      id="cartOverlay"
+      onclick="closeCartOutside(event)"
+    >
+      <div class="cart-drawer">
+        <div style="padding: 12px 20px 0">
+          <div class="cart-handle"></div>
+        </div>
+        <div class="cart-header">
+          <h3>Your Order 🛒</h3>
+          <button class="cart-close" onclick="closeCart()">✕</button>
+        </div>
+        <div class="cart-body" id="cartBody"></div>
+        <div class="cart-footer" id="cartFooter" style="display: none">
+          <div class="cart-total-row">
+            <span class="cart-total-label">Total</span>
+            <span class="cart-total-amount" id="cartTotalAmount">₦0</span>
+          </div>
+          <div class="cart-footer-btns">
+            <button class="clear-btn" onclick="clearCart()">Clear All</button>
+            <button
+              class="btn-primary"
+              style="flex: 1"
+              onclick="sendWhatsAppOrder()"
+            >
+              Checkout via WhatsApp →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-label">Behind the Plates</div>
+      <h2>Food that speaks <em>for itself</em></h2>
+      <p class="section-desc">
+        Every dish is prepared with care, passion, and authentic Nigerian
+        flavour.
+      </p>
+      <div class="gallery-mosaic">
+        <div class="g-item wide">
+          <img
+            src="./pictures/jollofrice2.jpg"
+            alt="Jollof Rice feast"
+          />
+        </div>
+        <div class="g-item">
+          <img
+            src="./pictures/egusisoup.jpg"
+            alt="egusi soup"
+          />
+        </div>
+        <div class="g-item">
+          <img
+            src="./pictures/friedchicken.jpg"
+            alt="Fried chicken"
+          />
+        </div>
+        <div class="g-item">
+          <img
+            src="./pictures/peppersoup.jpg"
+            alt="Pepper soup"
+          />
+        </div>
+        <div class="g-item wide">
+          <img
+            src="./pictures/grilledmeat.jpg"
+            alt="Grilled meats"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- DELIVERY -->
+    <section id="delivery">
+      <div class="section-label">We Come to You</div>
+      <h2>Fast <em>Delivery</em></h2>
+      <p class="section-desc">
+        Order by phone or WhatsApp and we'll bring it to your door hot, fresh,
+        and on time.
+      </p>
+
+      <div class="delivery-card fade-up">
+        <div class="delivery-icon">🛵</div>
+        <h3>Delivery Zones</h3>
+        <p>
+          We deliver across Onitsha and surrounding areas. Call or WhatsApp your
+          address and we'll confirm your delivery fee.
+        </p>
+        <div class="delivery-zones">
+          <span class="zone-tag">Awada Layout</span>
+          <span class="zone-tag">Upper Iweka</span>
+          <span class="zone-tag">Fegge</span>
+          <span class="zone-tag">GRA Onitsha</span>
+          <span class="zone-tag">Woliwo</span>
+          <span class="zone-tag">Bridge Head</span>
+          <span class="zone-tag">Inland Town</span>
+        </div>
+      </div>
+
+      <div class="delivery-card fade-up">
+        <div class="delivery-icon">🕘</div>
+        <h3>Opening Hours</h3>
+        <div class="hours-grid">
+          <div class="hours-row">
+            <span class="day">Monday – Saturday</span
+            ><span class="time">9:00 AM – 5:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Sunday</span><span class="time">Closed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery-card fade-up">
+        <div class="delivery-icon">📞</div>
+        <h3>Order by Phone or WhatsApp</h3>
+        <p>Call or message us directly. We respond fast!</p>
+        <div
+          style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap"
+        >
+          <a
+            href="tel:+2349035955007"
+            class="btn-primary"
+            style="font-size: 14px; padding: 11px 22px"
+            >📞 Call Us</a
+          >
+          <a
+            href="https://wa.me/2349035955007?text=Hi!%20I%27d%20like%20to%20order%20food%20for%20delivery"
+            target="_blank"
+            class="btn-wa"
+            style="font-size: 14px; padding: 11px 18px"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATERING -->
+    <section id="catering">
+      <div class="section-label" style="color: rgba(255, 255, 255, 0.6)">
+        Events & Celebrations
+      </div>
+      <h2>Book <em>Catering</em></h2>
+      <p class="section-desc">
+        Weddings, birthdays, corporate events, burials we bring the kitchen to
+        you. Affordable, delicious, stress-free.
+      </p>
+
+      <div class="catering-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="c_name" placeholder="Your full name" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="c_phone" placeholder="08X XXXX XXXX" />
+          </div>
+          <div class="form-group">
+            <label>Event Date</label>
+            <input type="date" id="c_date" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Event Type</label>
+          <select id="c_type">
+            <option value="">Select event type</option>
+            <option>Wedding / Traditional Marriage</option>
+            <option>Birthday Party</option>
+            <option>Corporate Event / Meeting</option>
+            <option>Burial Ceremony</option>
+            <option>Baby Shower / Naming</option>
+            <option>Church / Religious Event</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group" style="grid-column: span 1">
+            <label>Est. Guests</label>
+            <input type="number" id="c_guests" placeholder="e.g. 100" />
+          </div>
+          <div class="form-group" style="grid-column: span 1">
+            <label>Location / Venue</label>
+            <input type="text" id="c_venue" placeholder="Onitsha, Anambra..." />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Special Requests / Menu Ideas</label>
+          <textarea
+            id="c_notes"
+            rows="3"
+            placeholder="e.g. Jollof rice, fried chicken, small chops, egusi soup…"
+          ></textarea>
+        </div>
+        <button class="btn-gold" onclick="submitCatering()">
+          Send Booking via WhatsApp →
+        </button>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">Our Story</div>
+      <h2>Cooked with <em>Heart</em></h2>
+      <div class="about-card fade-up">
+        <img
+          class="about-img"
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80"
+          alt="Chef cooking"
+        />
+        <div class="about-body">
+          <p>
+            Miraz Kitchen was born from a simple belief: that the best meals
+            come from home. Tucked away in Awada Layout, Onitsha, we've been
+            feeding families, celebrating milestones, and making people feel
+            welcome one plate at a time.
+          </p>
+          <p>
+            Every dish is made fresh daily using locally sourced produce. From
+            our smoky Jollof Rice to our richly spiced Egusi Soup, every bite
+            carries the warmth of Nigerian home cooking done right.
+          </p>
+          <div class="badges">
+            <span class="badge">🌿 Fresh Daily</span>
+            <span class="badge">🏠 Homestyle Cooking</span>
+            <span class="badge">🚚 Fast Delivery</span>
+            <span class="badge">💯 Quality Assured</span>
+            <span class="badge">🎉 Catering Available</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="section-label">What People Say</div>
+      <h2>Real <em>Reviews</em></h2>
+      <div class="reviews-list">
+        <div class="review-card fade-up">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Food delicious, delivery fast and swift, service is excellent,
+            packaging is top notch at a very affordable price. I highly
+            recommend!
+          </p>
+          <div class="review-author">Verified Customer — Google</div>
+        </div>
+        <div class="review-card fade-up">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Nice food, nice people. Always fresh, always on time. Miraz Kitchen
+            is my go-to in Onitsha without question.
+          </p>
+          <div class="review-author">Verified Customer — Google</div>
+        </div>
+        <div class="review-card fade-up">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Ordered catering for my son's birthday — over 80 guests and everyone
+            was satisfied. Professional, affordable, and the food was amazing.
+            Will use them again!
+          </p>
+          <div class="review-author">Event Customer — Awada, Onitsha</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label" style="color: var(--gold)">Get In Touch</div>
+      <h2>Visit or <em>Call Us</em></h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">
+              Awada Layout, Onitsha<br />Anambra State, Nigeria
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value">
+              <a href="tel:+2349035955007">+234 903 595 5007</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕘</div>
+          <div>
+            <div class="contact-label">Opening Hours</div>
+            <div class="contact-value">
+              Mon–Sat: 9 AM – 5 PM<br />Sunday: Closed
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⭐</div>
+          <div>
+            <div class="contact-label">Rating</div>
+            <div class="contact-value">
+              4.5 / 5 on
+              <a
+                href="https://maps.google.com/?cid=12869503796158274211"
+                target="_blank"
+                >Google Maps</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d992.8!2d6.8105408!3d6.121071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1043934310d72bdf%3A0xb299a9c5d58e1aa3!2sMirazkitchen!5e0!3m2!1sen!2sng!4v1700000000000"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div
+        class="footer-logo"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 10px;
+        "
+      >
+        <img
+          src="MirazK.png"
+          alt="Miraz Kitchen"
+          style="
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+            padding: 3px;
+          "
+        /><span
+          >Miraz<span style="color: var(--gold); font-style: italic"
+            >Kitchen</span
+          ></span
+        >
+      </div>
+      <p>Awada Layout, Onitsha · +234 903 595 5007</p>
+      <p style="margin-top: 6px">© 2025 Miraz Kitchen. All rights reserved.</p>
+    </footer>
+
+    <!-- WA FLOAT -->
+    <a
+      class="wa-float"
+      href="https://wa.me/2349035955007?text=Hi%20Miraz%20Kitchen!%20I%27d%20like%20to%20order"
+      target="_blank"
+      title="Chat on WhatsApp"
+    >
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+      <div class="modal" style="position: relative">
+        <button class="modal-close" onclick="closeModalDirect()">✕</button>
+        <div class="modal-handle"></div>
+        <h3 id="m_name">Item Name</h3>
+        <img id="m_img" class="modal-img" src="" alt="" />
+        <div class="modal-price" id="m_price">₦0</div>
+        <p class="modal-desc" id="m_desc">Description</p>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <span class="qty-num" id="qtyNum">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <button class="btn-primary" style="width: 100%" onclick="addToCart()">
+          Add to Order
+        </button>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+      const menuItems = [
+        {
+          id: 1,
+          cat: "rice",
+          name: "Party Jollof Rice",
+          price: 1500,
+          img: "./pictures/jollofrice2.jpg",
+          desc: "Smoky party-style Jollof rice cooked over firewood with tomatoes, peppers and spices. Served with choice of protein.",
+        },
+        {
+          id: 2,
+          cat: "rice",
+          name: "Fried Rice & Chicken",
+          price: 1800,
+          img: "./pictures/friedrice.jpg",
+          desc: "Fragrant fried rice with mixed vegetables, liver and diced chicken — a party favourite.",
+        },
+        {
+          id: 3,
+          cat: "rice",
+          name: "White Rice & Stew",
+          price: 1200,
+          img: "./pictures/whiterice.jpg",
+          desc: "Fluffy white rice served with our rich beef-and-tomato stew, garnished with assorted meats.",
+        },
+        {
+          id: 4,
+          cat: "soup",
+          name: "Egusi Soup",
+          price: 1400,
+          img: "./pictures/egusisoup.jpg",
+          desc: "Thick, flavourful egusi (melon seed) soup cooked with palm oil, crayfish, stockfish and assorted meat.",
+        },
+        {
+          id: 5,
+          cat: "soup",
+          name: "Ofe Onugbu (Bitter Leaf Soup)",
+          price: 1400,
+          img: "./pictures/ofeonugbu.jpg",
+          desc: "Traditional Igbo bitter leaf soup, slow-cooked with cocoyam, palm oil and assorted proteins.",
+        },
+        {
+          id: 6,
+          cat: "soup",
+          name: "Oha Soup",
+          price: 1500,
+          img: "./pictures/ofeoha.jpg",
+          desc: "Delicious Igbo delicacy with oha leaves, cocoyam thickener, crayfish and rich palm oil base.",
+        },
+        {
+          id: 7,
+          cat: "soup",
+          name: "Pepper Soup",
+          price: 1600,
+          img: "./pictures/peppersoup.jpg",
+          desc: "Spicy, aromatic Catfish or Goat pepper soup — hot, bold and deeply satisfying.",
+        },
+        {
+          id: 8,
+          cat: "protein",
+          name: "Fried Chicken",
+          price: 1500,
+          img: "./pictures/friedchicken.jpg",
+          desc: "Crispy golden fried chicken seasoned with our special spice blend. Juicy inside, crunchy outside.",
+        },
+        {
+          id: 9,
+          cat: "protein",
+          name: "Grilled Fish",
+          price: 2000,
+          img: "./pictures/grilledfish.jpg",
+          desc: "Fresh whole fish grilled to perfection with peppers, onions and our marinade. Served with sauce.",
+        },
+        {
+          id: 10,
+          cat: "protein",
+          name: "Goat Meat soup",
+          price: 1800,
+          img: "./pictures/goatmeat.jpg",
+          desc: "Spicy grilled goat meat, chopped and tossed in hot pepper sauce. A crowd favourite.",
+        },
+        {
+          id: 11,
+          cat: "snack",
+          name: "Puff Puff",
+          price: 500,
+          img: "./pictures/puffpuff.jpg",
+          desc: "Light, fluffy deep-fried dough balls lightly sweetened. Perfect snack for any time of day.",
+        },
+        {
+          id: 12,
+          cat: "snack",
+          name: "Moi Moi",
+          price: 700,
+          img: "./pictures/moimoi.jpg",
+          desc: "Steamed bean pudding with eggs, fish and peppers. Soft, rich and absolutely delicious.",
+        },
+        {
+          id: 13,
+          cat: "drink",
+          name: "Chapman",
+          price: 600,
+          img: "./pictures/chapman.jpg",
+          desc: "Classic Nigerian Chapman cocktail Fanta orange, Fanta strawberry, cucumber, and grenadine over ice.",
+        },
+        {
+          id: 14,
+          cat: "drink",
+          name: "Zobo Drink",
+          price: 400,
+          img: "./pictures/zobo.jpg",
+          desc: "Homemade hibiscus drink infused with ginger, cloves and pineapple flavour. Refreshing and natural.",
+        },
+      ];
+
+      let cart = {}; // { id: qty }
+      let currentItem = null;
+      let currentQty = 1;
+
+      /* ── MENU ── */
+      function renderMenu(filter = "all") {
+        const grid = document.getElementById("menuGrid");
+        const filtered =
+          filter === "all"
+            ? menuItems
+            : menuItems.filter(i => i.cat === filter);
+        grid.innerHTML = filtered
+          .map(
+            item => `
+    <div class="menu-card" onclick="openModal(${item.id})">
+      <img src="${item.img}" alt="${item.name}" loading="lazy"/>
+      <div class="menu-card-body">
+        <div class="menu-card-name">${item.name}</div>
+        <div class="menu-card-desc">${item.desc.substring(0, 60)}…</div>
+        <div class="menu-card-footer">
+          <span class="menu-price">₦${item.price.toLocaleString()}</span>
+          <button class="add-btn" onclick="event.stopPropagation();quickAdd(${item.id})">+</button>
+        </div>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      function filterMenu(cat, btn) {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderMenu(cat);
+      }
+
+      /* ── ITEM MODAL ── */
+      function openModal(id) {
+        const item = menuItems.find(i => i.id === id);
+        currentItem = item;
+        currentQty = 1;
+        document.getElementById("m_name").textContent = item.name;
+        document.getElementById("m_img").src = item.img;
+        document.getElementById("m_img").alt = item.name;
+        document.getElementById("m_price").textContent =
+          "₦" + item.price.toLocaleString();
+        document.getElementById("m_desc").textContent = item.desc;
+        document.getElementById("qtyNum").textContent = 1;
+        document.getElementById("modalOverlay").classList.add("open");
+      }
+      function closeModal(e) {
+        if (e.target === document.getElementById("modalOverlay"))
+          closeModalDirect();
+      }
+      function closeModalDirect() {
+        document.getElementById("modalOverlay").classList.remove("open");
+      }
+      function changeQty(d) {
+        currentQty = Math.max(1, currentQty + d);
+        document.getElementById("qtyNum").textContent = currentQty;
+      }
+      function addToCart() {
+        if (!currentItem) return;
+        cart[currentItem.id] = (cart[currentItem.id] || 0) + currentQty;
+        updatePanel();
+        closeModalDirect();
+        showToast(`${currentItem.name} added to order!`);
+      }
+      function quickAdd(id) {
+        cart[id] = (cart[id] || 0) + 1;
+        const item = menuItems.find(i => i.id === id);
+        updatePanel();
+        showToast(`${item.name} added!`);
+      }
+
+      /* ── PANEL ── */
+      function updatePanel() {
+        const entries = Object.entries(cart).filter(([, qty]) => qty > 0);
+        const total = entries.reduce(
+          (s, [id, qty]) =>
+            s + (menuItems.find(i => i.id == id)?.price || 0) * qty,
+          0,
+        );
+        const count = entries.reduce((s, [, qty]) => s + qty, 0);
+        document.getElementById("orderTotal").textContent =
+          "₦" + total.toLocaleString();
+        document.getElementById("orderCount").textContent =
+          count + " item" + (count !== 1 ? "s" : "");
+        document
+          .getElementById("orderPanel")
+          .classList.toggle("visible", count > 0);
+        // Refresh cart drawer if open
+        if (document.getElementById("cartOverlay").classList.contains("open"))
+          renderCartBody();
+      }
+
+      /* ── CART DRAWER ── */
+      function openCart() {
+        renderCartBody();
+        document.getElementById("cartOverlay").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeCart() {
+        document.getElementById("cartOverlay").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      function closeCartOutside(e) {
+        if (e.target === document.getElementById("cartOverlay")) closeCart();
+      }
+
+      function renderCartBody() {
+        const body = document.getElementById("cartBody");
+        const footer = document.getElementById("cartFooter");
+        const entries = Object.entries(cart).filter(([, qty]) => qty > 0);
+
+        if (!entries.length) {
+          body.innerHTML = `<div class="cart-empty"><span class="empty-icon">🍽️</span>Your cart is empty.<br><small style="color:#aaa;margin-top:6px;display:block;">Add something delicious from the menu!</small></div>`;
+          footer.style.display = "none";
+          return;
+        }
+
+        body.innerHTML = entries
+          .map(([id, qty]) => {
+            const item = menuItems.find(i => i.id == id);
+            if (!item) return "";
+            return `
+      <div class="cart-row" id="crow-${id}">
+        <img class="cart-row-img" src="${item.img}" alt="${item.name}"/>
+        <div class="cart-row-info">
+          <div class="cart-row-name">${item.name}</div>
+          <div class="cart-row-price">₦${(item.price * qty).toLocaleString()}</div>
+        </div>
+        <div class="cart-row-controls">
+          <button class="cqty-btn remove" onclick="cartRemoveOne(${id})" title="Remove one">−</button>
+          <span class="cqty-num">${qty}</span>
+          <button class="cqty-btn" onclick="cartAddOne(${id})" title="Add one">+</button>
+          <button class="cqty-btn remove" onclick="cartDeleteItem(${id})" title="Remove item" style="margin-left:2px;font-size:13px;">🗑</button>
+        </div>
+      </div>`;
+          })
+          .join("");
+
+        const total = entries.reduce(
+          (s, [id, qty]) =>
+            s + (menuItems.find(i => i.id == id)?.price || 0) * qty,
+          0,
+        );
+        document.getElementById("cartTotalAmount").textContent =
+          "₦" + total.toLocaleString();
+        footer.style.display = "block";
+      }
+
+      function cartAddOne(id) {
+        cart[id] = (cart[id] || 0) + 1;
+        updatePanel();
+      }
+      function cartRemoveOne(id) {
+        if (!cart[id]) return;
+        cart[id]--;
+        if (cart[id] <= 0) delete cart[id];
+        updatePanel();
+        if (!Object.keys(cart).length) closeCart();
+      }
+      function cartDeleteItem(id) {
+        delete cart[id];
+        updatePanel();
+        if (!Object.keys(cart).filter(k => cart[k] > 0).length) closeCart();
+      }
+      function clearCart() {
+        cart = {};
+        updatePanel();
+        closeCart();
+        showToast("Cart cleared.");
+      }
+
+      /* ── WHATSAPP ORDER ── */
+      function sendWhatsAppOrder() {
+        const entries = Object.entries(cart).filter(([, qty]) => qty > 0);
+        if (!entries.length) {
+          showToast("Add items to your order first!");
+          return;
+        }
+        const lines = entries.map(([id, qty]) => {
+          const item = menuItems.find(i => i.id == id);
+          return `• ${item.name} x${qty} = ₦${(item.price * qty).toLocaleString()}`;
+        });
+        const total = entries.reduce(
+          (s, [id, qty]) =>
+            s + (menuItems.find(i => i.id == id)?.price || 0) * qty,
+          0,
+        );
+        const msg = `Hi Miraz Kitchen! I'd like to place an order:\n\n${lines.join("\n")}\n\n*Total: ₦${total.toLocaleString()}*\n\nPlease confirm availability and delivery details. Thank you!`;
+        window.open(
+          "https://wa.me/2349035955007?text=" + encodeURIComponent(msg),
+          "_blank",
+        );
+      }
+
+      /* ── CATERING ── */
+      function submitCatering() {
+        const name = document.getElementById("c_name").value.trim();
+        const phone = document.getElementById("c_phone").value.trim();
+        const date = document.getElementById("c_date").value;
+        const type = document.getElementById("c_type").value;
+        const guests = document.getElementById("c_guests").value;
+        const venue = document.getElementById("c_venue").value.trim();
+        const notes = document.getElementById("c_notes").value.trim();
+        if (!name || !phone) {
+          showToast("Please enter your name and phone number.");
+          return;
+        }
+        const msg = `Hi Miraz Kitchen! I'd like to book catering:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Event:* ${type || "Not specified"}\n*Date:* ${date || "TBD"}\n*Guests:* ${guests || "TBD"}\n*Venue:* ${venue || "TBD"}\n*Special Requests:* ${notes || "None"}\n\nPlease get in touch to confirm. Thank you!`;
+        window.open(
+          "https://wa.me/2349035955007?text=" + encodeURIComponent(msg),
+          "_blank",
+        );
+      }
+
+      /* ── TOAST ── */
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 2800);
+      }
+
+      // Scroll animations
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+      renderMenu();
+    </script>
+  </body>
+</html>
